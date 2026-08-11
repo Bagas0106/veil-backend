@@ -9,11 +9,6 @@ venv/
 .venv/
 env_gpu/
 
-# file model ai onnx gede bgt gausah di git
-weights/
-*.onnx
-*.pt
-
 # folder dataset gambar jg jgn dimasukin berat
 datasets/
 
