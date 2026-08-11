@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+python-multipart
+pydantic-settings
+onnxruntime
+ultralytics
+easyocr
+pyzbar
+opencv-python-headless
+numpy

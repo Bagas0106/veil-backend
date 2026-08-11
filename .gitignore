@@ -1,0 +1,27 @@
+# jangan masukin folder cache python ntar menuhin git
+__pycache__/
+*.py[cod]
+*$py.class
+
+# folder virtual env ga usah di push
+env/
+venv/
+.venv/
+env_gpu/
+
+# file model ai onnx gede bgt gausah di git
+weights/
+*.onnx
+*.pt
+
+# folder dataset gambar jg jgn dimasukin berat
+datasets/
+
+# folder log hasil training yolo
+runs/
+
+# file rahasia kek api key dll
+.env
+
+# file jupyter notebook sampah
+.ipynb_checkpoints/
