@@ -3,20 +3,74 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# folder virtual env ga usah di push
+# file build dan extension c
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# file log sama database lokal ga usah di push
+*.log
+*.sqlite3
+
+# file report hasil test
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+
+# folder virtual env sama file rahasia kek api key ga usah di push
+.env
+.venv
 env/
 venv/
-.venv/
+ENV/
 env_gpu/
 
-# folder dataset gambar jg jgn dimasukin berat
-datasets/
+# file jupyter notebook sampah
+.ipynb_checkpoints
 
-# folder log hasil training yolo
+# file config editor (vscode, dll)
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# file sampah bawaan OS
+.DS_Store
+Thumbs.db
+
+# folder dataset gambar jg jgn dimasukin berat, sama folder log hasil training yolo
+datasets/
 runs/
 
-# file rahasia kek api key dll
-.env
+# ignore file weight yg nyasar by default
+*.pt
+*.pth
+*.h5
+*.onnx
+*.weights
+*.tflite
+*.pb
 
-# file jupyter notebook sampah
-.ipynb_checkpoints/
+# TAPI KHUSUS folder weights JANGAN di ignore karna dibutuhin backend
+!weights/
+!weights/**
