@@ -17,7 +17,7 @@ async def extract_data(request: Request, file: UploadFile = File(...)):
     
     logger.info(f"Incoming extract request: filename='{file.filename}', content_type='{file.content_type}'")
     
-    # Validasi tipe file / extension
+    # validasi tipe file / extension
     is_valid_ext = any(filename.endswith(ext) for ext in SUPPORTED_EXTENSIONS)
     is_valid_type = content_type.startswith("image/")
     
@@ -30,11 +30,11 @@ async def extract_data(request: Request, file: UploadFile = File(...)):
         logger.warning("Empty file payload received.")
         raise HTTPException(400, "File yang diunggah kosong.")
     
-    # 1. Coba decode pake OpenCV
+    # 1. coba decode pake opencv
     nparr = np.frombuffer(contents, np.uint8)
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
     
-    # 2. Fallback pake PIL kalau OpenCV gagal decode (misal format webp / format tertentu)
+    # 2. fallback pake pil kalau opencv gagal decode (misal format webp / format tertentu)
     if img is None:
         try:
             pil_image = Image.open(io.BytesIO(contents)).convert("RGB")
